@@ -4,16 +4,41 @@ using namespace std;
 
 Calc::Calc(){
 	//first var, second var, current, previous.
-	float a, b, c, p;
+	float a, b;
 	std::vector<int> myInts;
-	char ops[4] = { [0] = "*", [1] = "/", [2] = "-", [3] = "+" };
-	//  ^for checking the priority of operators
 }
 
 void calc::push(int myNum){
 	myInts.push_back(myNum);
 }
 
-void Calc::doMath(char opp){
-	char* a = "DO THINGS!!!"
+void Calc::doMath(char op){
+	float a = myInts[myInts.size()];
+	myInts.pop_back();
+	float b = myInts[myInts.size()];
+	myInts.pop_back();
+
+	if(op == '*'){
+		float tmp = a * b;
+
+		myInts.push_back(tmp);
+	}
+
+	if(op == '/'){
+		float tmp = a / b;
+
+		myInts.push_back(tmp);
+	}
+
+	if(op == '-'){
+		float tmp = a - b;
+
+		myInts.push_back(tmp);
+	}
+
+	if(op == '+'){
+		float tmp = a + b;
+
+		myInts.push_back(tmp);
+	}
 }
