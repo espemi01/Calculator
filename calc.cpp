@@ -5,7 +5,7 @@ using namespace std;
 Calc::Calc(){
 	//first var, second var, current, previous.
 	float a, b;
-	std::vector<int> myInts;
+	std::vector<float*> myInts;
 }
 
 void calc::push(int myNum){
