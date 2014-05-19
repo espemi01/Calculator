@@ -59,6 +59,10 @@ int main(int argc, char *argv[]){
   b6  -> callback(Number_Button::clickcb);
   b5  -> callback(Number_Button::clickcb);
   // done with widgets
+
+  //display updating
+  //Updating a stack class with operands
+  //doing math
   
   window->end();
   window->show(argc,argv);
