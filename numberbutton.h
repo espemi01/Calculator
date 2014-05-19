@@ -14,13 +14,15 @@ class Number_Button : public Fl_Button {
  public:
   Number_Button(int x, int y, int w, int h, int val, const char *label)
     : Fl_Button(x,y,w,h,label){
-    value = val;
+    	value = val;
   }
+
+  int getVal(){return value;}
   
 
-  void clickcb(Fl_Widget *w, void * something) {
+  static void clickcb(Fl_Widget *w, void * something) {
     Number_Button *myButton = (Number_Button *)w;
-    std::cout << "Hello" << std::endl;
+    std::cout << myButton -> getVal() << std::endl;
     
   }
 };

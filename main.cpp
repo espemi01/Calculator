@@ -23,14 +23,14 @@ int main(int argc, char *argv[]){
 
   box = new Fl_Box(FL_DOWN_BOX,10,10,240,75,"Display");
 
-  Op_Button *b1  = new Op_Button (10    , 95 , 52.5 , 52.5 , "±"    );
-  Op_Button *b2  = new Op_Button (72.5  , 95 , 52.5 , 52.5 , "sqrt" );
-  Op_Button *b3  = new Op_Button (135   , 95 , 52.5 , 52.5 , "^"    );
-  Op_Button *b4  = new Op_Button (197.5 , 95 , 52.5 , 52.5 , "+"    );
+  Op_Button *b1      = new Op_Button     (10    , 95 , 52.5 , 52.5 , "±"    );
+  Op_Button *b2      = new Op_Button     (72.5  , 95 , 52.5 , 52.5 , "sqrt" );
+  Op_Button *b3      = new Op_Button     (135   , 95 , 52.5 , 52.5 , "^"    );
+  Op_Button *b4      = new Op_Button     (197.5 , 95 , 52.5 , 52.5 , "+"    );
 
   Number_Button *b5  = new Number_Button (10    , 157.5 , 52.5 , 52.5 , 7 , "7" );
   Number_Button *b6  = new Number_Button (72.5  , 157.5 , 52.5 , 52.5 , 8 , "8" );
-  Number_Button *b7  = new Number_Button (135   , 157.5 , 52.5 , 52.5 , 9 , "9" );
+  Number_Button *b7  = new Number_Button (135   , 157.5 , 52.5 , 52.5 , 8 , "9" );
   Op_Button     *b8  = new Op_Button     (197.5 , 157.5 , 52.5 , 52.5 , "-" );
 
   Number_Button *b9  = new Number_Button (10    , 220 , 52.5 , 52.5 , 4 , "4" );
@@ -47,6 +47,8 @@ int main(int argc, char *argv[]){
   Number_Button *b18 = new Number_Button (72.5  , 345 , 52.5 , 52.5 , 0 , "0" );
   Op_Button     *b19 = new Op_Button     (135   , 345 , 52.5 , 52.5 , "." );
   Op_Button     *b20 = new Op_Button     (197.5 , 345 , 52.5 , 52.5 , "E" );
+
+  b18 -> callback(Number_Button::clickcb);
   
   // done with widgets
   
