@@ -20,7 +20,7 @@ class Number_Button : public Fl_Button {
 
   static void clickcb(Fl_Widget *w, void * something) {
     Number_Button *myButton = (Number_Button *)w;
-    std::cout << value << std::endl;
+    std::cout << this->value << std::endl;
     
   }
 };
