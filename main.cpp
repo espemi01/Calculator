@@ -58,6 +58,17 @@ int main(int argc, char *argv[]){
   b7  -> callback(Number_Button::clickcb);
   b6  -> callback(Number_Button::clickcb);
   b5  -> callback(Number_Button::clickcb);
+
+  b1  -> callback(Op_Button::clickcb);
+  b2  -> callback(Op_Button::clickcb);
+  b3  -> callback(Op_Button::clickcb);
+  b4  -> callback(Op_Button::clickcb);
+  b8  -> callback(Op_Button::clickcb);
+  b12  -> callback(Op_Button::clickcb);
+  b16  -> callback(Op_Button::clickcb);
+  b17  -> callback(Op_Button::clickcb);
+  b19  -> callback(Op_Button::clickcb);
+  b20  -> callback(Op_Button::clickcb);
   // done with widgets
 
   //display updating
