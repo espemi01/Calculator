@@ -1,15 +1,17 @@
+#include <string>
+
 #ifndef CALC
 #define CALC
 
 class Calc{
 private:
-	int a, b, c, p;
-	std::vector<int> myInts;
+	long double a, b, c, p;
+	std::vector<long double*> myNums;
 	char opps[4];
 public:
 	Calc();
-	void doMath(char opp);
-	void push(int myNum);
+	void doMath(string opp);
+	void push(long double myNum);
 	//void graph(char *)
 
 };

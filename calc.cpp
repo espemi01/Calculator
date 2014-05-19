@@ -8,7 +8,7 @@ Calc::Calc(){
 	std::vector<float*> myInts;
 }
 
-void calc::push(int myNum){
+void Calc::push(int myNum){
 	myInts.push_back(myNum);
 }
 
