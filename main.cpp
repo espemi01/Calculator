@@ -5,7 +5,8 @@
 #include <FL/Fl_Button.H>
 #include <FL/fl_ask.H>
 #include <string>
-#include "button.h"
+#include "opbutton.h"
+#include "numberbutton.h"
 
 
 using namespace std;
@@ -22,30 +23,30 @@ int main(int argc, char *argv[]){
 
   box = new Fl_Box(FL_DOWN_BOX,10,10,240,75,"Display");
 
-  Fl_Button *b1  = new Fl_Button (10    , 95 , 52.5 , 52.5 , "±"    );
-  Fl_Button *b2  = new Fl_Button (72.5  , 95 , 52.5 , 52.5 , "sqrt" );
-  Fl_Button *b3  = new Fl_Button (135   , 95 , 52.5 , 52.5 , "^"    );
-  Fl_Button *b4  = new Fl_Button (197.5 , 95 , 52.5 , 52.5 , "+"    );
+  Op_Button *b1  = new Op_Button (10    , 95 , 52.5 , 52.5 , "±"    );
+  Op_Button *b2  = new Op_Button (72.5  , 95 , 52.5 , 52.5 , "sqrt" );
+  Op_Button *b3  = new Op_Button (135   , 95 , 52.5 , 52.5 , "^"    );
+  Op_Button *b4  = new Op_Button (197.5 , 95 , 52.5 , 52.5 , "+"    );
 
-  Number_Button *b5  = new Number_Button (10    , 157.5 , 52.5 , 52.5 , "7" );
-  Number_Button *b6  = new Number_Button (72.5  , 157.5 , 52.5 , 52.5 , "8" );
-  Number_Button *b7  = new Number_Button (135   , 157.5 , 52.5 , 52.5 , "9" );
-  Fl_Button     *b8  = new Fl_Button     (197.5 , 157.5 , 52.5 , 52.5 , "-" );
+  Number_Button *b5  = new Number_Button (10    , 157.5 , 52.5 , 52.5 , 7 , "7" );
+  Number_Button *b6  = new Number_Button (72.5  , 157.5 , 52.5 , 52.5 , 8 , "8" );
+  Number_Button *b7  = new Number_Button (135   , 157.5 , 52.5 , 52.5 , 9 , "9" );
+  Op_Button     *b8  = new Op_Button     (197.5 , 157.5 , 52.5 , 52.5 , "-" );
 
-  Number_Button *b9  = new Number_Button (10    , 220 , 52.5 , 52.5 , "4" );
-  Number_Button *b10 = new Number_Button (72.5  , 220 , 52.5 , 52.5 , "5" );
-  Number_Button *b11 = new Number_Button (135   , 220 , 52.5 , 52.5 , "6" );
-  Fl_Button     *b12 = new Fl_Button     (197.5 , 220 , 52.5 , 52.5 , "*" );
+  Number_Button *b9  = new Number_Button (10    , 220 , 52.5 , 52.5 , 4 , "4" );
+  Number_Button *b10 = new Number_Button (72.5  , 220 , 52.5 , 52.5 , 5 , "5" );
+  Number_Button *b11 = new Number_Button (135   , 220 , 52.5 , 52.5 , 6 , "6" );
+  Op_Button     *b12 = new Op_Button     (197.5 , 220 , 52.5 , 52.5 , "*" );
 
-  Number_Button *b13 = new Number_Button (10    , 282.5 , 52.5 , 52.5 , "1" );
-  Number_Button *b14 = new Number_Button (72.5  , 282.5 , 52.5 , 52.5 , "2" );
-  Number_Button *b15 = new Number_Button (135   , 282.5 , 52.5 , 52.5 , "3" );
-  Fl_Button     *b16 = new Fl_Button     (197.5 , 282.5 , 52.5 , 52.5 , "/" );
+  Number_Button *b13 = new Number_Button (10    , 282.5 , 52.5 , 52.5 , 1 , "1" );
+  Number_Button *b14 = new Number_Button (72.5  , 282.5 , 52.5 , 52.5 , 2 , "2" );
+  Number_Button *b15 = new Number_Button (135   , 282.5 , 52.5 , 52.5 , 3 , "3" );
+  Op_Button     *b16 = new Op_Button     (197.5 , 282.5 , 52.5 , 52.5 , "/" );
 
-  Fl_Button     *b17 = new Fl_Button     (10    , 345 , 52.5 , 52.5 , "C" );
-  Number_Button *b18 = new Number_Button (72.5  , 345 , 52.5 , 52.5 , "0" );
-  Fl_Button     *b19 = new Fl_Button     (135   , 345 , 52.5 , 52.5 , "." );
-  Fl_Button     *b20 = new Fl_Button     (197.5 , 345 , 52.5 , 52.5 , "E" );
+  Op_Button     *b17 = new Op_Button     (10    , 345 , 52.5 , 52.5 , "C" );
+  Number_Button *b18 = new Number_Button (72.5  , 345 , 52.5 , 52.5 , 0 , "0" );
+  Op_Button     *b19 = new Op_Button     (135   , 345 , 52.5 , 52.5 , "." );
+  Op_Button     *b20 = new Op_Button     (197.5 , 345 , 52.5 , 52.5 , "E" );
   
   // done with widgets
   
