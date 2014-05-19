@@ -23,5 +23,9 @@ class Calc_Display : public Fl_Box {
 			value = (value * 10 ) + val;
 			this -> copy_label(to_string(value).c_str());
 		}
+		void clear() {
+			value = 0;
+			this -> copy_label(to_string(value).c_str());
+		}
 };
 #endif
