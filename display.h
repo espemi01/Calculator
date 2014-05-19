@@ -19,13 +19,18 @@ class Calc_Display : public Fl_Box {
 			this -> copy_label(to_string(init).c_str());
 			}
 
-		void update(signed long long int val) {
+		void update(long double val) {
 			value = (value * 10 ) + val;
+			this -> copy_label(to_string(value).c_str());
+		}
+		void opupdate(long double val) {
+			value = val;
 			this -> copy_label(to_string(value).c_str());
 		}
 		void clear() {
 			value = 0;
 			this -> copy_label(to_string(value).c_str());
 		}
+		long double getVal() {return value;}
 };
 #endif

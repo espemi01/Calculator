@@ -3,6 +3,7 @@
 #include <iostream>
 #include <cstdlib>
 #include "display.h"
+#include "calc.h"
 
 #ifndef OPBUTTON_H
 #define OPBUTTON_H
@@ -13,13 +14,14 @@ class Op_Button : public Fl_Button {
 
  private:
   string character;
-  Calc_Display *disp;
-
+  Calc_Display* disp;
+  Calc* myCalc;
  public:
-  Op_Button(int x, int y, int w, int h, const char *label, Calc_Display* display)
+  Op_Button(int x, int y, int w, int h, const char *label, Calc_Display* display, Calc* calculator)
     : Fl_Button(x,y,w,h,label){
     	this -> character = label;
     	this -> disp = display;
+    	this -> myCalc = calculator;
   }
 
   string getFace(){return character;}
@@ -30,6 +32,18 @@ class Op_Button : public Fl_Button {
     cout << myButton -> getFace() << endl;
     if (myButton -> getFace() == "C"){
     	myButton -> disp -> clear();
+    }
+    else if (myButton -> getFace() == "E"){
+    	myButton -> myCalc -> push(myButton -> disp -> getVal());
+    	myButton -> disp -> clear();
+    }
+    else if ((myButton -> getFace() == "+") || 
+    		 (myButton -> getFace() == "-") ||
+    		 (myButton -> getFace() == "*") ||
+    		 (myButton -> getFace() == "/")){
+    	myButton -> myCalc -> doMath(myButton -> getFace());
+
+
     }
   }
 };

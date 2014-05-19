@@ -8,7 +8,7 @@
 #include "opbutton.h"
 #include "numberbutton.h"
 #include "display.h"
-
+#include "calc.h"
 
 using namespace std;
 
@@ -23,31 +23,31 @@ int main(int argc, char *argv[]){
   Fl_Window *window = new Fl_Window(260,407.5);
 
   display = new Calc_Display(FL_DOWN_BOX,10,10,240,75,"0",0);
-
-  Op_Button *b1      = new Op_Button     (10    , 95 , 52.5 , 52.5 , "±"    , display );
-  Op_Button *b2      = new Op_Button     (72.5  , 95 , 52.5 , 52.5 , "sqrt" , display );
-  Op_Button *b3      = new Op_Button     (135   , 95 , 52.5 , 52.5 , "^"    , display );
-  Op_Button *b4      = new Op_Button     (197.5 , 95 , 52.5 , 52.5 , "+"    , display );
+  Calc *Calculator   = new Calc(display);
+  Op_Button *b1      = new Op_Button     (10    , 95 , 52.5 , 52.5 , "±"    , display , Calculator);
+  Op_Button *b2      = new Op_Button     (72.5  , 95 , 52.5 , 52.5 , "sqrt" , display , Calculator);
+  Op_Button *b3      = new Op_Button     (135   , 95 , 52.5 , 52.5 , "^"    , display , Calculator);
+  Op_Button *b4      = new Op_Button     (197.5 , 95 , 52.5 , 52.5 , "+"    , display , Calculator);
 
   Number_Button *b5  = new Number_Button (10    , 157.5 , 52.5 , 52.5 , 7 , "7" , display );
   Number_Button *b6  = new Number_Button (72.5  , 157.5 , 52.5 , 52.5 , 8 , "8" , display );
   Number_Button *b7  = new Number_Button (135   , 157.5 , 52.5 , 52.5 , 9 , "9" , display );
-  Op_Button     *b8  = new Op_Button     (197.5 , 157.5 , 52.5 , 52.5 ,     "-" , display );
+  Op_Button     *b8  = new Op_Button     (197.5 , 157.5 , 52.5 , 52.5 ,     "-" , display , Calculator);
 
   Number_Button *b9  = new Number_Button (10    , 220 , 52.5 , 52.5 , 4 , "4" , display );
   Number_Button *b10 = new Number_Button (72.5  , 220 , 52.5 , 52.5 , 5 , "5" , display );
   Number_Button *b11 = new Number_Button (135   , 220 , 52.5 , 52.5 , 6 , "6" , display );
-  Op_Button     *b12 = new Op_Button     (197.5 , 220 , 52.5 , 52.5 ,     "*" , display );
+  Op_Button     *b12 = new Op_Button     (197.5 , 220 , 52.5 , 52.5 ,     "*" , display , Calculator);
 
   Number_Button *b13 = new Number_Button (10    , 282.5 , 52.5 , 52.5 , 1 , "1" , display );
   Number_Button *b14 = new Number_Button (72.5  , 282.5 , 52.5 , 52.5 , 2 , "2" , display );
   Number_Button *b15 = new Number_Button (135   , 282.5 , 52.5 , 52.5 , 3 , "3" , display );
-  Op_Button     *b16 = new Op_Button     (197.5 , 282.5 , 52.5 , 52.5 ,     "/" , display );
+  Op_Button     *b16 = new Op_Button     (197.5 , 282.5 , 52.5 , 52.5 ,     "/" , display , Calculator);
 
-  Op_Button     *b17 = new Op_Button     (10    , 345 , 52.5 , 52.5 ,     "C" , display );
+  Op_Button     *b17 = new Op_Button     (10    , 345 , 52.5 , 52.5 ,     "C" , display , Calculator);
   Number_Button *b18 = new Number_Button (72.5  , 345 , 52.5 , 52.5 , 0 , "0" , display );
-  Op_Button     *b19 = new Op_Button     (135   , 345 , 52.5 , 52.5 ,     "." , display );
-  Op_Button     *b20 = new Op_Button     (197.5 , 345 , 52.5 , 52.5 ,     "E" , display );
+  Op_Button     *b19 = new Op_Button     (135   , 345 , 52.5 , 52.5 ,     "." , display , Calculator);
+  Op_Button     *b20 = new Op_Button     (197.5 , 345 , 52.5 , 52.5 ,     "E" , display , Calculator);
 
   b18 -> callback(Number_Button::clickcb);
   b15 -> callback(Number_Button::clickcb);
