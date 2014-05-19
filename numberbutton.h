@@ -10,8 +10,9 @@ class Number_Button : public Fl_Button {
   int value;
 
  public:
-  Number_Button(int x, int y, int w, int h, const char *label)
+  Number_Button(int x, int y, int w, int h, int val, const char *label)
     : Fl_Button(x,y,w,h,label){
+    value = val;
   }
   
 
