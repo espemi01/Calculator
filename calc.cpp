@@ -5,7 +5,7 @@ using namespace std;
 Calc::Calc(){
 	//first var, second var, current, previous.
 	long double a, b;
-	std::vector<long double*> myInts;
+	std::vector<long double> myInts;
 }
 
 void Calc::push(long double myNum){
