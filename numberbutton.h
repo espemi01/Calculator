@@ -1,5 +1,7 @@
 #include <Fl/Fl_Button.H>
 #include <string>
+#include <iostream>
+#include <cstdlib>
 
 #ifndef NUMBERBUTTON_H
 #define NUMBERBUTTON_H
