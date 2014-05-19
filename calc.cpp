@@ -4,40 +4,40 @@ using namespace std;
 
 Calc::Calc(){
 	//first var, second var, current, previous.
-	float a, b;
-	std::vector<float*> myInts;
+	long double a, b;
+	std::vector<long double*> myInts;
 }
 
-void Calc::push(int myNum){
+void Calc::push(long double myNum){
 	myInts.push_back(myNum);
 }
 
 void Calc::doMath(char op){
-	float a = myInts[myInts.size()];
+	long double a = myInts[myInts.size()-1];
 	myInts.pop_back();
-	float b = myInts[myInts.size()];
+	long double b = myInts[myInts.size()-1];
 	myInts.pop_back();
 
 	if(op == '*'){
-		float tmp = a * b;
+		long double tmp = a * b;
 
 		myInts.push_back(tmp);
 	}
 
 	if(op == '/'){
-		float tmp = a / b;
+		long double tmp = a / b;
 
 		myInts.push_back(tmp);
 	}
 
 	if(op == '-'){
-		float tmp = a - b;
+		long double tmp = a - b;
 
 		myInts.push_back(tmp);
 	}
 
 	if(op == '+'){
-		float tmp = a + b;
+		long double tmp = a + b;
 
 		myInts.push_back(tmp);
 	}
