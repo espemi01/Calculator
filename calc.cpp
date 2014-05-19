@@ -7,6 +7,7 @@ Calc::Calc(Calc_Display* display){
 	//first var, second var, current, previous.
 	long double a, b;
 	std::vector<long double> myNums;
+	myNums.push_back(1.0);
 	disp = display;
 }
 
@@ -44,5 +45,10 @@ void Calc::doMath(string op){
 		disp -> opupdate(tmp);
 		myNums.push_back(tmp);
 	}
+
+}
+
+void Calc::sqrt(){
+	long double a = myNums[myNums.size()-1];
 
 }

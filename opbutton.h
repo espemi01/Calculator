@@ -29,7 +29,7 @@ class Op_Button : public Fl_Button {
 
   static void clickcb(Fl_Widget *w, void * something) {
     Op_Button *myButton = (Op_Button *)w;
-    cout << myButton -> getFace() << endl;
+    //cout << myButton -> getFace() << endl;
     if (myButton -> getFace() == "C"){
     	myButton -> disp -> clear();
     }
@@ -42,9 +42,14 @@ class Op_Button : public Fl_Button {
     		 (myButton -> getFace() == "*") ||
     		 (myButton -> getFace() == "/")){
     	myButton -> myCalc -> doMath(myButton -> getFace());
+  }
+
+    else if (myButton -> getFace() == "sqrt"){
+      myButton -> myCalc -> sqrt();
+    }
 
 
     }
-  }
+  
 };
 #endif

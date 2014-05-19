@@ -15,6 +15,7 @@ public:
 	Calc(Calc_Display*);
 	void doMath(string opp);
 	void push(long double myNum);
+	void sqrt();
 	//void graph(char *)
 
 };
