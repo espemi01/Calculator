@@ -39,12 +39,17 @@ class Op_Button : public Fl_Button {
     	myButton -> disp -> clear();
     }
     else if ((myButton -> getFace() == "+") || 
-    		 (myButton -> getFace() == "-") ||
-    		 (myButton -> getFace() == "*") ||
-    		 (myButton -> getFace() == "/") ||
-         (myButton -> getFace() == "sqrt")){
+    		     (myButton -> getFace() == "-") ||
+    		     (myButton -> getFace() == "*") ||
+    		     (myButton -> getFace() == "/") ||
+             (myButton -> getFace() == "sqrt")){
+      if ((myButton -> disp -> getEnter()) || !(myButton -> disp -> getResShow())){
+        myButton -> myCalc ->push(myButton -> disp -> getVal());
+        myButton -> disp -> setEnter(false);
+      }
     	myButton -> myCalc -> doMath(myButton -> getFace());
-      myButton -> myCalc ->push(myButton -> disp -> getVal());
+      
+      
   }
 
 
