@@ -41,15 +41,12 @@ class Op_Button : public Fl_Button {
     else if ((myButton -> getFace() == "+") || 
     		 (myButton -> getFace() == "-") ||
     		 (myButton -> getFace() == "*") ||
-    		 (myButton -> getFace() == "/")){
+    		 (myButton -> getFace() == "/") ||
+         (myButton -> getFace() == "sqrt")){
     	myButton -> myCalc -> doMath(myButton -> getFace());
       myButton -> myCalc ->push(myButton -> disp -> getVal());
   }
 
-
-    else if (myButton -> getFace() == "sqrt"){
-      myButton -> myCalc -> sqrt();
-    }
 
     else if(myButton -> getFace() == "±"){
       myButton -> myCalc -> neg();
