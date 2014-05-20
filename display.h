@@ -16,6 +16,7 @@ class Calc_Display : public Fl_Box {
 		Calc_Display(Fl_Boxtype b, int x, int y, int w, int h, const char *label, long double init)
 			: Fl_Box(b,x,y,w,h,label){
 			this -> value = init;
+
 			this -> copy_label(to_string(init).c_str());
 			}
 

@@ -48,7 +48,19 @@ void Calc::doMath(string op){
 
 }
 
+void Calc::cl(){
+	myNums.pop_back();
+}
+
 void Calc::sqrt(){
 	long double a = myNums[myNums.size()-1];
 
+}
+
+void Calc::neg(){
+	long double a = myNums[myNums.size()-1];
+	myNums.pop_back();
+	a = -a;
+	disp -> opupdate(a);
+	myNums.push_back(a);
 }

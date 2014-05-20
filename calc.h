@@ -16,6 +16,8 @@ public:
 	void doMath(string opp);
 	void push(long double myNum);
 	void sqrt();
+	void neg();
+	void cl();
 	//void graph(char *)
 
 };
