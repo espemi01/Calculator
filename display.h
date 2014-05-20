@@ -14,6 +14,8 @@ class Calc_Display : public Fl_Box {
 		bool entering = false;
 		bool showres  = false;
 		bool entered  = false;
+		bool decimal  = false;
+		int  decLevel = 10;
 
 
 	public:
@@ -28,10 +30,19 @@ class Calc_Display : public Fl_Box {
 				this -> value = 0;
 				this -> showres = false;
 			}
-			value = (value * 10 ) + val;
-			this -> copy_label(to_string(value).c_str());
-			entering = true;
-			entered  = false;
+			if(decimal){
+				this -> value = value + (val/decLevel);
+				this -> copy_label(to_string(value).c_str());
+				decLevel *= 10;
+				entering  = true;
+				entered   = false;
+			}
+			else{
+				value = (value * 10 ) + val;
+				this -> copy_label(to_string(value).c_str());
+				entering = true;
+				entered  = false;
+			}
 		}
 		void opupdate(long double val) {
 			this -> value = val;
@@ -44,6 +55,8 @@ class Calc_Display : public Fl_Box {
 			this -> copy_label(to_string(value).c_str());
 			showres = false;
 			entered = true;
+			decimal = false;
+			decLevel = 10;
 
 		}
 		long double getVal() {return value;}
@@ -53,5 +66,7 @@ class Calc_Display : public Fl_Box {
 		void setShow(bool b){showres = b;}
 		bool getEntered(){return entered;}
 		void setEntered(bool b){entered = b;}
+		void setDec(bool b){decimal = b;}
+		bool getDec(){return decimal;}
 };
 #endif

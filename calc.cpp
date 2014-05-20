@@ -68,9 +68,9 @@ void Calc::doMath(string op){
 		myNums.push_back(tmp);
 	}
 	else if(op == "sqrt"){
-		if (!(disp -> getResShow())){
+		/*if (!(disp -> getResShow()) && !(disp -> getEntered())){
 		this -> push(disp -> getVal());
-		}
+		}*/
 		long double a = myNums[myNums.size()-1];
 		myNums.pop_back();
 		long double tmp;
@@ -78,6 +78,22 @@ void Calc::doMath(string op){
 		myNums.push_back(tmp);
 		disp -> opupdate(tmp);
 		disp -> setShow(true);
+	}
+	else if(op == "±"){
+		long double a = myNums[myNums.size()-1];
+		myNums.pop_back();
+		a = a * -1;
+		disp -> opupdate(a);
+		myNums.push_back(a);
+	}
+	else if(op == "^"){
+		long double b = myNums[myNums.size()-1];
+		myNums.pop_back();
+		long double a = myNums[myNums.size()-1];
+		myNums.pop_back();
+		long double tmp = pow(a,b);
+		disp -> opupdate(tmp);
+		myNums.push_back(tmp);
 	}
 	for(int i = 0 ; i < myNums.size() ; i++){
 		cout << myNums[i] << ' ';
@@ -88,14 +104,7 @@ void Calc::doMath(string op){
 }
 
 void Calc::cl(){
-	myNums.pop_back();
-}
-
-
-void Calc::neg(){
-	long double a = myNums[myNums.size()-1];
-	myNums.pop_back();
-	a = -a;
-	disp -> opupdate(a);
-	myNums.push_back(a);
+	if(!myNums.empty()){
+		myNums.pop_back();	
+	}
 }
