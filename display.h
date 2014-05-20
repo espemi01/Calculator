@@ -13,13 +13,13 @@ class Calc_Display : public Fl_Box {
 		string disp;
 		bool entering = false;
 		bool showres  = false;
+		bool entered  = false;
 
 
 	public:
 		Calc_Display(Fl_Boxtype b, int x, int y, int w, int h, const char *label, long double init)
 			: Fl_Box(b,x,y,w,h,label){
 			this -> value = init;
-
 			this -> copy_label(to_string(init).c_str());
 			}
 
@@ -31,6 +31,7 @@ class Calc_Display : public Fl_Box {
 			value = (value * 10 ) + val;
 			this -> copy_label(to_string(value).c_str());
 			entering = true;
+			entered  = false;
 		}
 		void opupdate(long double val) {
 			this -> value = val;
@@ -42,6 +43,7 @@ class Calc_Display : public Fl_Box {
 			value = 0;
 			this -> copy_label(to_string(value).c_str());
 			showres = false;
+			entered = true;
 
 		}
 		long double getVal() {return value;}
@@ -49,5 +51,7 @@ class Calc_Display : public Fl_Box {
 		void setEnter(bool b){entering = b;}
 		bool getResShow(){return showres;}
 		void setShow(bool b){showres = b;}
+		bool getEntered(){return entered;}
+		void setEntered(bool b){entered = b;}
 };
 #endif

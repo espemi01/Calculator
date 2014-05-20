@@ -43,7 +43,7 @@ class Op_Button : public Fl_Button {
     		     (myButton -> getFace() == "*") ||
     		     (myButton -> getFace() == "/") ||
              (myButton -> getFace() == "sqrt")){
-      if ((myButton -> disp -> getEnter()) || !(myButton -> disp -> getResShow())){
+      if (((myButton -> disp -> getEnter()) || !(myButton -> disp -> getResShow())) && !(myButton -> disp -> getEntered())){
         myButton -> myCalc ->push(myButton -> disp -> getVal());
         myButton -> disp -> setEnter(false);
       }
