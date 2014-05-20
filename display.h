@@ -1,3 +1,4 @@
+#include <FL/Fl.H>
 #include <FL/Fl_Box.H>
 #include <string>
 #include <cstdlib>

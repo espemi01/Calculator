@@ -87,13 +87,20 @@ void Calc::doMath(string op){
 		myNums.push_back(a);
 	}
 	else if(op == "^"){
-		long double b = myNums[myNums.size()-1];
-		myNums.pop_back();
-		long double a = myNums[myNums.size()-1];
-		myNums.pop_back();
-		long double tmp = pow(a,b);
-		disp -> opupdate(tmp);
-		myNums.push_back(tmp);
+		if (myNums.size() > 1){
+			long double b = myNums[myNums.size()-1];
+			myNums.pop_back();
+			long double a = myNums[myNums.size()-1];
+			myNums.pop_back();
+			long double tmp = pow(a,b);
+			disp -> opupdate(tmp);
+			myNums.push_back(tmp);
+		}
+
+		else{
+			disp -> opupdate(0);
+
+		}
 	}
 	for(int i = 0 ; i < myNums.size() ; i++){
 		cout << myNums[i] << ' ';
